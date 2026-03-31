@@ -2,9 +2,11 @@ import numpy as np
 import torch
 from math import radians, cos, sin, asin, sqrt
 import joblib
+import os
 from torch.nn.utils.rnn import pad_sequence
 
 max_len = 100  # max traj len; i.e., M
+device = torch.device('cpu')
 
 def haversine(lon1, lat1, lon2, lat2):
     lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])

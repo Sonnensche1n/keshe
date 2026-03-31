@@ -1,4 +1,5 @@
-from load import *
+from utils import device
+from load import max_len
 import torch
 from torch import nn
 from torch.nn import functional as F

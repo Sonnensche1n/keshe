@@ -2,9 +2,14 @@ import torch
 import torch.utils.data as data
 import numpy as np
 from tqdm import tqdm
-from load import max_len, device, to_npy
+from load import max_len
 import torch.nn.functional as F
 import random
+
+device = torch.device('cpu') # Force CPU since cuda fails in this environment
+
+def to_npy(x):
+    return x.cpu().data.numpy() if torch.cuda.is_available() else x.detach().numpy()
 
 def calculate_acc(prob, label):
     acc_train = [0, 0, 0, 0]

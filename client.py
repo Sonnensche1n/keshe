@@ -4,8 +4,8 @@ import torch.nn.functional as F
 import torch.utils.data as data
 from tqdm import tqdm
 import copy
-from utils import DataSet, calculate_acc, sampling_prob
-from load import device, max_len
+from utils import DataSet, calculate_acc, sampling_prob, device
+from load import max_len
 import numpy as np
 
 class STANClient:

@@ -1,4 +1,5 @@
 from layers import *
+from utils import device
 
 
 class Model(nn.Module):
